@@ -307,13 +307,31 @@ endif
 "----------------------------------------
 " 各種プラグイン設定
 "----------------------------------------
-set rtp+=~/.vim/vundle.git/
-call vundle#rc()
-Bundle 'Shougo/neocomplcache'
-Bundle 'Shougo/unite.vim'
-Bundle 'thinca/vim-ref'
-Bundle 'thinca/vim-quickrun'
+set nocompatible               " be iMproved
+filetype off
+
+
+if has('vim_starting')
+	set runtimepath+=~/.vim/neobundle.vim
+	call neobundle#rc(expand('~/.vim/bundle/')) 
+endif
+
+NeoBundle 'Shougo/neobundle.vim'
+NeoBundle 'Shougo/vimproc'
+NeoBundle 'VimClojure'
+NeoBundle 'Shougo/vimshell'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/neosnippet'
+NeoBundle 'jpalardy/vim-slime'
+NeoBundle 'scrooloose/syntastic'
+""NeoBundle 'https://bitbucket.org/kovisoft/slimv'
+
 filetype plugin indent on     " required!
+filetype indent on
+syntax on
+
+
 "----------------------------------------
 " 一時設定
 "----------------------------------------
