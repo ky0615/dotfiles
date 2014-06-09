@@ -104,7 +104,7 @@ endif
 
 "色テーマ設定
 "gvimの色テーマは.gvimrcで指定する
-"colorscheme mycolor
+" colorscheme desert
 
 """"""""""""""""""""""""""""""
 "ステータスラインに文字コードやBOM、16進表示等表示
@@ -331,9 +331,9 @@ NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tomtom/tcomment_vim'
-NeoBundle 'tpope/vim-endwise'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'nathanaelkane/vim-indent-guides'
+" NeoBundle 'tpope/vim-endwise'
+" NeoBundle 'tpope/vim-surround'
+" NeoBundle 'nathanaelkane/vim-indent-guides'
 
 ""NeoBundle 'https://bitbucket.org/kovisoft/slimv'
 
@@ -368,11 +368,11 @@ au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 """"""""""""""""""""""""""""""
 
 " grep検索の実行後にQuickFix Listを表示する
-autocmd QuickFixCmdPost *grep* cwindow
+" autocmd QuickFixCmdPost *grep* cwindow
 " ステータス行に現在のgitブランチを表示する
 set statusline+=%{fugitive#statusline()}
 " vimを立ち上げたときに、自動的にvim-indent-guidesをオンにする
-let g:indent_guides_enable_on_vim_startup = 1
+" let g:indent_guides_enable_on_vim_startup = 1
 
 "----------------------------------------
 " 一時設定
