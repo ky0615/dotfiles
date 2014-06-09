@@ -2,6 +2,7 @@
 ZSH=$HOME/dotfiles/oh-my-zsh
 ZSH_THEME="dst_e"
 ZSH_CUSTOM=$ZSH"/../zshcustom"
+source $HOME/.zshrc.custom
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
