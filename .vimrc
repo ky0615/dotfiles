@@ -314,6 +314,7 @@ filetype off
 if has('vim_starting')
 	set runtimepath+=~/.vim/neobundle.vim
 	call neobundle#rc(expand('~/.vim/bundle/')) 
+	set runtimepath+=$GOROOT/misc/vim
 endif
 
 NeoBundle 'Shougo/neobundle.vim'
@@ -331,9 +332,11 @@ NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tomtom/tcomment_vim'
-" NeoBundle 'tpope/vim-endwise'
-" NeoBundle 'tpope/vim-surround'
-" NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'tpope/vim-endwise'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'nathanaelkane/vim-indent-guides'
 
 ""NeoBundle 'https://bitbucket.org/kovisoft/slimv'
 
@@ -354,6 +357,9 @@ noremap <C-P> :Unite buffer<CR>
 noremap <C-N> :Unite -buffer-name=file file<CR>
 " 最近使ったファイルの一覧
 noremap <C-Z> :Unite file_mru<CR>
+
+imap <C-f> <C-x><C-o>
+
 " sourcesを「今開いているファイルのディレクトリ」とする
 noremap :uff :<C-u>UniteWithBufferDir file -buffer-name=file<CR>
 " ウィンドウを分割して開く
@@ -373,6 +379,20 @@ au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 set statusline+=%{fugitive#statusline()}
 " vimを立ち上げたときに、自動的にvim-indent-guidesをオンにする
 " let g:indent_guides_enable_on_vim_startup = 1
+
+exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
+autocmd FileType go autocmd BufWritePre <buffer> Fmt
+
+" ;と:の機能を入れ替える
+nnoremap ; :
+nnoremap : ;
+
+" CoffeeSCript config
+
+" vimにcoffeeファイルタイプを認識させる
+au BufRead,BufNewFile,BufReadPre *.coffee   set filetype=coffee
+" インデントを設定
+autocmd FileType coffee     setlocal sw=2 sts=2 ts=2 et
 
 "----------------------------------------
 " 一時設定

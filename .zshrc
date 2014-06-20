@@ -82,5 +82,7 @@ export PATH="$HOME/.phpenv/bin:$PATH"
 eval "$(phpenv init -)"
 
 PATH=$PATH:/Applications/Xcode6-Beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/
-# export GOROOT="/usr/local/Cellar/go/1.2.2/"
-export GOPATH="/usr/local/_go"
+
+export GOROOT="/usr/local/Cellar/go/1.2.2/libexec"
+export GOPATH="$HOME/gocode/"
+PATH=$PATH:$HOME/gocode/bin/
