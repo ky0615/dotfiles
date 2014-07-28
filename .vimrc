@@ -337,6 +337,7 @@ NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'mattn/emmet-vim'
 
 ""NeoBundle 'https://bitbucket.org/kovisoft/slimv'
 
