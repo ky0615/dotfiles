@@ -1,0 +1,21 @@
+[user]
+	name = tarosa
+	email = idolm@ster.temp.ws
+[core]
+	excludesfile = /Users/tarosa/.gitignore_global
+	editor = vim
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[color]
+	ui = auto
+[alias]
+	mylog = log --graph --name-status --pretty=format:\"%C(red)%h %C(green)%an %Creset%s %C(yellow)%d%Creset\"
+	s = status -sb
+	df = diff
+	co = checkout
+	b = branch
+
