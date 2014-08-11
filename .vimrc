@@ -1,115 +1,184 @@
-"ファイルの上書きの前にバックアップを作る/作らない
-"set writebackupを指定してもオプション 'backup' がオンでない限り、
-"バックアップは上書きに成功した後に削除される。
-set nowritebackup
-"バックアップ/スワップファイルを作成する/しない
-set nobackup
-"set noswapfile
-"再読込、vim終了後も継続するアンドゥ(7.3)
-if version >= 703
-  "Persistent undoを有効化(7.3)
-  "set undofile
-  "アンドゥの保存場所(7.3)
-  "set undodir=.
-endif
-"viminfoを作成しない
-"set viminfo=
-"クリップボードを共有
-set clipboard+=unnamed
-"8進数を無効にする。<C-a>,<C-x>に影響する
-set nrformats-=octal
-"キーコードやマッピングされたキー列が完了するのを待つ時間(ミリ秒)
-set timeoutlen=3500
-"編集結果非保存のバッファから、新しいバッファを開くときに警告を出さない
+" release autogroup in MyAutoCmd
+augroup MyAutoCmd
+  autocmd!
+augroup END
+
+
+set nocompatible
+filetype indent plugin on
+syntax on
+
+" Buffer command line completion
 set hidden
-"ヒストリの保存数
-set history=50
-"日本語の行の連結時には空白を入力しない
-set formatoptions+=mM
-"Visual blockモードでフリーカーソルを有効にする
-set virtualedit=block
-"カーソルキーで行末／行頭の移動可能に設定
-set whichwrap=b,s,[,],<,>
-"バックスペースでインデントや改行を削除できるようにする
-set backspace=indent,eol,start
-"□や○の文字があってもカーソル位置がずれないようにする
-set ambiwidth=double
-"コマンドライン補完するときに強化されたものを使う
+
+" Show commands in the last line of the screen
 set wildmenu
-"マウスを有効にする
+
+" Quickly time out on keycodes, but never time out on mappings
+set notimeout ttimeout ttimeoutlen=200
+
+" Share the Clipboad
+set clipboard+=unnamed
+
+" Disable octal (influence <C-a>, <C-x>)
+set nrformats-=octal
+
+" Lean history lengh
+set history=50
+
+" Connection the Japanese, dosen't insert space
+set formatoptions+=mM
+
+" Using keyboard cursor key
+set whichwrap=b,s,[,],<,>
+
+" Enable free cursor in Visual mode
+set virtualedit=block
+
+" Backspace able to delete indent , eol, start
+set backspace=indent,eol,start
+
+" Enable using a mouse
 if has('mouse')
   set mouse=a
 endif
-"pluginを使用可能にする
-filetype plugin indent on
 
-"----------------------------------------
-" 検索
-"----------------------------------------
-"検索の時に大文字小文字を区別しない
-"ただし大文字小文字の両方が含まれている場合は大文字小文字を区別する
+
+
+
+"------------------------------------------------
+" Indent options
+"   _           _
+"  | |         | |             _
+"  | |____   __| |_____ ____ _| |_
+"  | |  _ \ / _  | ___ |  _ (_   _)
+"  | | | | ( (_| | ____| | | || |_
+"  |_|_| |_|\____|_____)_| |_| \__)
+
+" Indentation space2 insted of tab
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+
+"------------------------------------------------
+" Mapping
+"   _______                   _
+"  (_______)                 (_)
+"    _  _  _ _____ ____  ____  _ ____   ____
+"   | ||_|| (____ |  _ \|  _ \| |  _ \ / _  |
+"   | |   | / ___ | |_| | |_| | | | | ( (_| |
+"   |_|   |_\_____|  __/|  __/|_|_| |_|\___ |
+"                 |_|   |_|           (_____|
+"
+
+" Map Y to act like D and C
+map Y y$
+
+" Map <C-L> to turn off search highlight
+nnoremap <C-L> :nohl<CR><C-L>
+
+
+"------------------------------------------------
+" Search
+"      ______                        _
+"     / _____)                      | |
+"    ( (____  _____ _____  ____ ____| |__
+"     \____ \| ___ (____ |/ ___) ___)  _ \
+"     _____) ) ____/ ___ | |  ( (___| | | |
+"    (______/|_____)_____|_|   \____)_| |_|
+"
+
+" Use case insentive serch
 set ignorecase
 set smartcase
-"検索時にファイルの最後まで行ったら最初に戻る
-set wrapscan
-"インクリメンタルサーチ
-set incsearch
-"検索文字の強調表示
-set hlsearch
-"w,bの移動で認識する文字
-"set iskeyword=a-z,A-Z,48-57,_,.,-,>
-"vimgrep をデフォルトのgrepとする場合internal
-"set grepprg=internal
 
-"----------------------------------------
-" 表示設定
-"----------------------------------------
-"スプラッシュ(起動時のメッセージ)を表示しない
-"set shortmess+=I
-"エラー時の音とビジュアルベルの抑制(gvimは.gvimrcで設定)
+" Return the first case
+set wrapscan
+
+" Using increment search
+set incsearch
+
+" Hightlight searches word
+set hlsearch
+
+
+"------------------------------------------------
+" View
+"    _     _ _
+"   (_)   (_|_)
+"    _     _ _ _____ _ _ _
+"   | |   | | | ___ | | | |
+"    \ \ / /| | ____| | | |
+"     \___/ |_|_____)\___/
+"
+
+" Using visual bell insted of beep sound
 set noerrorbells
 set novisualbell
 set visualbell t_vb=
-"マクロ実行中などの画面再描画を行わない
-"set lazyredraw
-"Windowsでディレクトリパスの区切り文字表示に / を使えるようにする
-set shellslash
-"行番号表示
+
+" Display line numbers
 set number
-"括弧の対応表示時間
+
+" show match brackets
 set showmatch matchtime=1
-"タブを設定
-"set ts=4 sw=4 sts=4
-"自動的にインデントする
+
+" Auto Indent
 set autoindent
-"Cインデントの設定
+set backspace=indent,eol,start
+
+" C Indent
 set cinoptions+=:0
-"タイトルを表示
+
+" Show Title
 set title
-"コマンドラインの高さ (gvimはgvimrcで指定)
-set cmdheight=2
-set laststatus=2
-"コマンドをステータス行に表示
+
+" Show command in status line
 set showcmd
-"画面最後の行をできる限り表示する
+
+"Show last line
 set display=lastline
-"Tab、行末の半角スペースを明示的に表示する
+
+" Show last space, Tab
 set list
 set listchars=tab:^\ ,trail:~
 
-" ハイライトを有効にする
+" Enable Highlight
 if &t_Co > 2 || has('gui_running')
   syntax on
 endif
 
-"色テーマ設定
-"gvimの色テーマは.gvimrcで指定する
-" colorscheme desert
+" Comming from over editers would expect
+set nostartofline
 
-""""""""""""""""""""""""""""""
-"ステータスラインに文字コードやBOM、16進表示等表示
-"iconvが使用可能の場合、カーソル上の文字コードをエンコードに応じた表示にするFencB()を使用
-""""""""""""""""""""""""""""""
+" Always display the status
+set laststatus=2
+
+" Enable use of mouse
+set mouse=a
+
+" Command line window height to 2 lines
+set cmdheight=2
+
+" テキストの折り返し
+set wrap
+
+" 自動的な改行を無効化
+set textwidth=0
+" 80文字目にラインを入れる
+set colorcolumn=80
+
+" Beauty char
+set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%
+
+" ESCを２回押すとハイライトが消える
+nmap <silent> <Esc><Esc> :nohlsearch<CR>
+
+
+"------------------------------------------------
+" Showing Char code and Hex code in end of line
+"
+
 if has('iconv')
   set statusline=%<%f\ %m\ %r%h%w%{'['.(&fenc!=''?&fenc:&enc).(&bomb?':BOM':'').']['.&ff.']'}%=[0x%{FencB()}]\ (%v,%l)/%L%8P\ 
 
@@ -132,10 +201,18 @@ function! s:Byte2hex(bytes)
   return join(map(copy(a:bytes), 'printf("%02X", v:val)'), '')
 endfunction
 
-"----------------------------------------
-" diff/patch
-"----------------------------------------
-" diffの設定
+
+
+"------------------------------------------------
+" diff
+"   ______  _    ___    ___
+"  (______)(_)  / __)  / __)
+"    _     _ _ _| |__ _| |__
+"   | |   | | (_   __|_   __)
+"   | |__/ /| | | |    | |
+"   |_____/ |_| |_|    |_|
+"
+
 if has('win95') || has('win16') || has('win32') || has('win64')
   set diffexpr=MyDiff()
   function! MyDiff()
@@ -166,44 +243,91 @@ function! MyPatch()
    :call system($VIM."\\'.'patch -o " . v:fname_out . " " . v:fname_in . " < " . v:fname_diff)
 endfunction
 
-"----------------------------------------
-" ノーマルモード
-"----------------------------------------
-"ヘルプ検索
+
+
+"------------------------------------------------
+" Normal mode 
+"
+
+" Showing help file
 nnoremap <F1> K
-"現在開いているvimスクリプトファイルを実行
+
+" Running Vim script
 nnoremap <F8> :source %<CR>
-"強制全保存終了を無効化
+
+" Disable force all save
 nnoremap ZZ <Nop>
-"カーソルをj k では表示行で移動する。物理行移動は<C-n>,<C-p>
-"キーボードマクロには物理行移動を推奨
-"h l はノーマルモードのみ行末、行頭を超えることが可能に設定(whichwrap) 
-" zvはカーソル位置の折り畳みを開くコマンド
+
 nnoremap <Down> gj
-nnoremap <Up>   gk
-nnoremap h <Left>zv
+nnoremap <Up> gk
+nnoremap h <Left>gk
 nnoremap j gj
 nnoremap k gk
 nnoremap l <Right>zv
 
-"----------------------------------------
-" 挿入モード
-"----------------------------------------
+" 検索後に対象ワードを中央に持ってくる
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap * *zz
+nnoremap # #zz
+nnoremap g* g*zz
+nnoremap g# g#zz
 
-"----------------------------------------
-" ビジュアルモード
-"----------------------------------------
+" w!! saving of Super user mode
+cmap w!! w !sudo tee > /dev/null %
 
-"----------------------------------------
-" コマンドモード
-"----------------------------------------
+"------------------------------------------------
+" Insert mode
+"   _                                                 _
+"  | |                         _                     | |
+"  | |____   ___ _____  ____ _| |_    ____   ___   __| |_____
+"  | |  _ \ /___) ___ |/ ___|_   _)  |    \ / _ \ / _  | ___ |
+"  | | | | |___ | ____| |     | |_   | | | | |_| ( (_| | ____|
+"  |_|_| |_(___/|_____)_|      \__)  |_|_|_|\___/ \____|_____)
+"
 
-"----------------------------------------
-" Vimスクリプト
-"----------------------------------------
-""""""""""""""""""""""""""""""
-"ファイルを開いたら前回のカーソル位置へ移動
-""""""""""""""""""""""""""""""
+" Replace the :  ;
+nnoremap ; :
+nnoremap : ;
+
+" 素早く押すとESCとみなす
+inoremap jj <Esc>
+
+
+
+"------------------------------------------------
+" Visual mode
+"   _     _ _                  _                     _
+"  (_)   (_|_)                | |                   | |
+"   _     _ _  ___ _   _ _____| |    ____   ___   __| |_____
+"  | |   | | |/___) | | (____ | |   |    \ / _ \ / _  | ___ |
+"   \ \ / /| |___ | |_| / ___ | |   | | | | |_| ( (_| | ____|
+"    \___/ |_(___/|____/\_____|\_)  |_|_|_|\___/ \____|_____)
+"
+
+"------------------------------------------------
+" Commands mode
+"    _______                                  _
+"   (_______)                                | |
+"    _       ___  ____  ____  _____ ____   __| | ___
+"   | |     / _ \|    \|    \(____ |  _ \ / _  |/___)
+"   | |____| |_| | | | | | | / ___ | | | ( (_| |___ |
+"    \______)___/|_|_|_|_|_|_\_____|_| |_|\____(___/
+"
+
+
+"------------------------------------------------
+" Vim Script
+"   _     _ _           ______             _
+"  (_)   (_|_)         / _____)           (_)       _
+"   _     _ _ ____    ( (____   ____  ____ _ ____ _| |_
+"  | |   | | |    \    \____ \ / ___)/ ___) |  _ (_   _)
+"   \ \ / /| | | | |   _____) | (___| |   | | |_| || |_
+"    \___/ |_|_|_|_|  (______/ \____)_|   |_|  __/  \__)
+"                                               |_|
+"
+
+" Moving last Cursor When open the file
 augroup vimrcEx
   autocmd!
   autocmd BufReadPost *
@@ -212,9 +336,7 @@ augroup vimrcEx
     \ endif
 augroup END
 
-""""""""""""""""""""""""""""""
-"挿入モード時、ステータスラインの色を変更
-""""""""""""""""""""""""""""""
+" Changing Stasu line Color when Insert mode
 let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=darkyellow gui=none ctermfg=blue ctermbg=yellow cterm=none'
 
 if has('syntax')
@@ -274,60 +396,49 @@ if has('syntax')
   call ZenkakuSpace()
 endif
 
-""""""""""""""""""""""""""""""
-"grep,tagsのためカレントディレクトリをファイルと同じディレクトリに移動する
-""""""""""""""""""""""""""""""
-"if exists('+autochdir')
-"  "autochdirがある場合カレントディレクトリを移動
-"  set autochdir
-"else
-"  "autochdirが存在しないが、カレントディレクトリを移動したい場合
-"  au BufEnter * execute ":silent! lcd " . escape(expand("%:p:h"), ' ')
-"endif
 
-""""""""""""""""""""""""""""""
-"Windowsで内部エンコーディングがcp932以外の場合
-"makeのメッセージが化けるのを回避
-""""""""""""""""""""""""""""""
-"if has('win32') || has('win64') || has('win95') || has('win16')
-"  au QuickfixCmdPost make call QFixCnv('cp932')
-"endif
-"
-"function! QFixCnv(enc)
-"  if a:enc == &enc
-"    return
-"  endif
-"  let qflist = getqflist()
-"  for i in qflist
-"    let i.text = iconv(i.text, a:enc, &enc)
-"  endfor
-"  call setqflist(qflist)
-"endfunction
 
-"----------------------------------------
-" 各種プラグイン設定
-"----------------------------------------
+
+"------------------------------------------------
+" Plugin
+"   ______  _              _
+"  (_____ \| |            (_)
+"   _____) ) | _   _  ____ _ ____
+"  |  ____/| || | | |/ _  | |  _ \
+"  | |     | || |_| ( (_| | | | | |
+"  |_|      \_)____/ \___ |_|_| |_|
+"                   (_____|
+
+
+
 set nocompatible               " be iMproved
 filetype off
-
 
 if has('vim_starting')
 	set runtimepath+=~/.vim/neobundle.vim
 	call neobundle#rc(expand('~/.vim/bundle/')) 
-	set runtimepath+=$GOROOT/misc/vim
+	set runtimepath+=$goroot/misc/vim
 endif
 
+
+" 非同期通信を可能にする
+" 'build'が指定されているのでインストール時に自動的に
+" 指定されたコマンドが実行され vimproc がコンパイルされる
+NeoBundle "Shougo/vimproc", {
+      \ "build": {
+      \   "windows"   : "make -f make_mingw32.mak",
+      \   "cygwin"    : "make -f make_cygwin.mak",
+      \   "mac"       : "make -f make_mac.mak",
+      \   "unix"      : "make -f make_unix.mak",
+      \ }}
+
 NeoBundle 'Shougo/neobundle.vim'
-NeoBundle 'Shougo/vimproc'
 NeoBundle 'VimClojure'
 NeoBundle 'Shougo/vimshell'
-NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'jpalardy/vim-slime'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'tpope/vim-fugitive'
@@ -338,25 +449,32 @@ NeoBundle 'tpope/vim-endwise'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'mattn/emmet-vim'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'vim-scripts/Align'
+NeoBundle 'vim-scripts/YankRing.vim'
 
-""NeoBundle 'https://bitbucket.org/kovisoft/slimv'
+"NeoBundle 'https://bitbucket.org/kovisoft/slimv'
+
+" インストールされていないプラグインのチェックおよびダウンロード
+NeoBundleCheck
+
 
 filetype plugin indent on     " required!
 filetype indent on
 syntax on
 
-NeoBundleCheck
+" Unite.vim Config
 
-""""""""""""""""""""""""""""""
-" Unit.vimの設定
-""""""""""""""""""""""""""""""
-" 入力モードで開始する
+" in start insert mode
 let g:unite_enable_start_insert=1
-" バッファ一覧
+
+" list of buffer
 noremap <C-P> :Unite buffer<CR>
-" ファイル一覧
+
+" file list
 noremap <C-N> :Unite -buffer-name=file file<CR>
-" 最近使ったファイルの一覧
+
+" using file list
 noremap <C-Z> :Unite file_mru<CR>
 
 imap <C-f> <C-x><C-o>
@@ -372,29 +490,249 @@ au FileType unite inoremap <silent> <buffer> <expr> <C-K> unite#do_action('vspli
 " ESCキーを2回押すと終了する
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
-""""""""""""""""""""""""""""""
 
-" grep検索の実行後にQuickFix Listを表示する
-" autocmd QuickFixCmdPost *grep* cwindow
-" ステータス行に現在のgitブランチを表示する
-set statusline+=%{fugitive#statusline()}
-" vimを立ち上げたときに、自動的にvim-indent-guidesをオンにする
-" let g:indent_guides_enable_on_vim_startup = 1
 
-exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
-autocmd FileType go autocmd BufWritePre <buffer> Fmt
+" Vim tmplate Config
 
-" ;と:の機能を入れ替える
-nnoremap ; :
-nnoremap : ;
+" テンプレート中に含まれる特定文字列を置き換える
+autocmd MyAutoCmd User plugin-template-loaded call s:template_keywords()
+function! s:template_keywords()
+    silent! %s/<+DATE+>/\=strftime('%Y-%m-%d')/g
+    silent! %s/<+FILENAME+>/\=expand('%:r')/g
+endfunction
+" テンプレート中に含まれる'<+CURSOR+>'にカーソルを移動
+autocmd MyAutoCmd User plugin-template-loaded
+    \   if search('<+CURSOR+>')
+    \ |   silent! execute 'normal! "_da>'
+    \ | endif
 
-" CoffeeSCript config
 
-" vimにcoffeeファイルタイプを認識させる
+nnoremap <Leader>g :GundoToggle<CR>
+nmap <Leader>T <plug>TaskList
+
+" CoffeeScript config
 au BufRead,BufNewFile,BufReadPre *.coffee   set filetype=coffee
-" インデントを設定
 autocmd FileType coffee     setlocal sw=2 sts=2 ts=2 et
 
-"----------------------------------------
-" 一時設定
-"----------------------------------------
+
+" Insertモードに入るまでロードしない
+
+NeoBundleLazy 'Shougo/neosnippet.vim', {
+    \ "autoload": {"insert": 1}}
+" 'GundoToggle'が呼ばれるまでロードしない
+NeoBundleLazy 'sjl/gundo.vim', {
+    \ "autoload": {"commands": ["GundoToggle"]}}
+" '<Plug>TaskList'というマッピングが呼ばれるまでロードしない
+NeoBundleLazy 'vim-scripts/TaskList.vim', {
+    \ "autoload": {"mappings": ['<Plug>TaskList']}}
+" HTMLが開かれるまでロードしない
+NeoBundleLazy 'mattn/zencoding-vim', {
+    \ "autoload": {"filetypes": ['html']}}
+
+
+
+
+
+
+NeoBundleLazy 'majutsushi/tagbar', {
+      \ "autload": {
+      \   "commands": ["TagbarToggle"],
+      \ },
+      \ "build": {
+      \   "mac": "brew install ctags",
+      \ }}
+nmap <Leader>t :TagbarToggle<CR>
+
+
+NeoBundle "thinca/vim-template"
+" テンプレート中に含まれる特定文字列を置き換える
+autocmd MyAutoCmd User plugin-template-loaded call s:template_keywords()
+function! s:template_keywords()
+    silent! %s/<+DATE+>/\=strftime('%Y-%m-%d')/g
+    silent! %s/<+FILENAME+>/\=expand('%:r')/g
+endfunction
+" テンプレート中に含まれる'<+CURSOR+>'にカーソルを移動
+autocmd MyAutoCmd User plugin-template-loaded
+    \   if search('<+CURSOR+>')
+    \ |   silent! execute 'normal! "_da>'
+    \ | endif
+
+
+
+NeoBundleLazy "Shougo/unite.vim", {
+      \ "autoload": {
+      \   "commands": ["Unite", "UniteWithBufferDir"]
+      \ }}
+NeoBundleLazy 'h1mesuke/unite-outline', {
+      \ "autoload": {
+      \   "unite_sources": ["outline"],
+      \ }}
+nnoremap [unite] <Nop>
+nmap U [unite]
+nnoremap <silent> [unite]f :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+nnoremap <silent> [unite]b :<C-u>Unite buffer<CR>
+nnoremap <silent> [unite]r :<C-u>Unite register<CR>
+nnoremap <silent> [unite]m :<C-u>Unite file_mru<CR>
+nnoremap <silent> [unite]c :<C-u>Unite bookmark<CR>
+nnoremap <silent> [unite]o :<C-u>Unite outline<CR>
+nnoremap <silent> [unite]t :<C-u>Unite tab<CR>
+nnoremap <silent> [unite]w :<C-u>Unite window<CR>
+let s:hooks = neobundle#get_hooks("unite.vim")
+function! s:hooks.on_source(bundle)
+  " start unite in insert mode
+  let g:unite_enable_start_insert = 1
+  " use vimfiler to open directory
+  call unite#custom_default_action("source/bookmark/directory", "vimfiler")
+  call unite#custom_default_action("directory", "vimfiler")
+  call unite#custom_default_action("directory_mru", "vimfiler")
+  autocmd MyAutoCmd FileType unite call s:unite_settings()
+  function! s:unite_settings()
+    imap <buffer> <Esc><Esc> <Plug>(unite_exit)
+    nmap <buffer> <Esc> <Plug>(unite_exit)
+    nmap <buffer> <C-n> <Plug>(unite_select_next_line)
+    nmap <buffer> <C-p> <Plug>(unite_select_previous_line)
+  endfunction
+endfunction
+
+
+NeoBundleLazy "Shougo/vimfiler", {
+      \ "depends": ["Shougo/unite.vim"],
+      \ "autoload": {
+      \   "commands": ["VimFilerTab", "VimFiler", "VimFilerExplorer"],
+      \   "mappings": ['<Plug>(vimfiler_switch)'],
+      \   "explorer": 1,
+      \ }}
+nnoremap <Leader>e :VimFilerExplorer<CR>
+" close vimfiler automatically when there are only vimfiler open
+autocmd MyAutoCmd BufEnter * if (winnr('$') == 1 && &filetype ==# 'vimfiler') | q | endif
+let s:hooks = neobundle#get_hooks("vimfiler")
+function! s:hooks.on_source(bundle)
+  let g:vimfiler_as_default_explorer = 1
+  let g:vimfiler_enable_auto_cd = 1
+  
+  " .から始まるファイルおよび.pycで終わるファイルを不可視パターンに
+  " 2013-08-14 追記
+  let g:vimfiler_ignore_pattern = "\%(^\..*\|\.pyc$\)"
+
+  " vimfiler specific key mappings
+  autocmd MyAutoCmd FileType vimfiler call s:vimfiler_settings()
+  function! s:vimfiler_settings()
+    " ^^ to go up
+    nmap <buffer> ^^ <Plug>(vimfiler_switch_to_parent_directory)
+    " use R to refresh
+    nmap <buffer> R <Plug>(vimfiler_redraw_screen)
+    " overwrite C-l
+    nmap <buffer> <C-l> <C-w>l
+  endfunction
+endfunction
+
+
+
+
+if has('lua') && v:version >= 703 && has('patch885')
+    NeoBundleLazy "Shougo/neocomplete.vim", {
+        \ "autoload": {
+        \   "insert": 1,
+        \ }}
+    " 2013-07-03 14:30 NeoComplCacheに合わせた
+    let g:neocomplete#enable_at_startup = 1
+    let s:hooks = neobundle#get_hooks("neocomplete.vim")
+    function! s:hooks.on_source(bundle)
+        let g:acp_enableAtStartup = 0
+        let g:neocomplet#enable_smart_case = 1
+        " NeoCompleteを有効化
+        " NeoCompleteEnable
+    endfunction
+else
+    NeoBundleLazy "Shougo/neocomplcache.vim", {
+        \ "autoload": {
+        \   "insert": 1,
+        \ }}
+    " 2013-07-03 14:30 原因不明だがNeoComplCacheEnableコマンドが見つからないので変更
+    let g:neocomplcache_enable_at_startup = 1
+    let s:hooks = neobundle#get_hooks("neocomplcache.vim")
+    function! s:hooks.on_source(bundle)
+        let g:acp_enableAtStartup = 0
+        let g:neocomplcache_enable_smart_case = 1
+        " NeoComplCacheを有効化
+        " NeoComplCacheEnable 
+    endfunction
+endif
+
+
+NeoBundleLazy "Shougo/neosnippet.vim", {
+      \ "depends": ["honza/vim-snippets"],
+      \ "autoload": {
+      \   "insert": 1,
+      \ }}
+let s:hooks = neobundle#get_hooks("neosnippet.vim")
+function! s:hooks.on_source(bundle)
+  " Plugin key-mappings.
+  imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+  smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+  xmap <C-k>     <Plug>(neosnippet_expand_target)
+  " SuperTab like snippets behavior.
+  imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+  \ "\<Plug>(neosnippet_expand_or_jump)"
+  \: pumvisible() ? "\<C-n>" : "\<TAB>"
+  smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+  \ "\<Plug>(neosnippet_expand_or_jump)"
+  \: "\<TAB>"
+  " For snippet_complete marker.
+  if has('conceal')
+    set conceallevel=2 concealcursor=i
+  endif
+  " Enable snipMate compatibility feature.
+  let g:neosnippet#enable_snipmate_compatibility = 1
+  " Tell Neosnippet about the other snippets
+  let g:neosnippet#snippets_directory=s:bundle_root . '/vim-snippets/snippets'
+endfunction
+
+
+" let g:indent_guides_enable_on_vim_startup = 1 2013-06-24 10:00 削除
+let s:hooks = neobundle#get_hooks("vim-indent-guides")
+function! s:hooks.on_source(bundle)
+  let g:indent_guides_guide_size = 1
+  IndentGuidesEnable " 2013-06-24 10:00 追記
+endfunction
+
+NeoBundleLazy "vim-scripts/TaskList.vim", {
+      \ "autoload": {
+      \   "mappings": ['<Plug>TaskList'],
+      \}}
+nmap <Leader>T <plug>TaskList
+
+
+NeoBundle "scrooloose/syntastic", {
+      \ "build": {
+      \   "mac": ["pip install flake8", "npm -g install coffeelint"],
+      \   "unix": ["pip install flake8", "npm -g install coffeelint"],
+      \ }}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

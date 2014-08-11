@@ -1,6 +1,6 @@
 [user]
-	name = tarosa
-	email = idolm@ster.temp.ws
+	name = KoutarouYabe
+	email = koutarou@linux.moe
 [core]
 	excludesfile = /Users/tarosa/.gitignore_global
 	editor = vim
@@ -18,4 +18,9 @@
 	df = diff
 	co = checkout
 	b = branch
+	l = log --oneline --decorate --graph
+	la = log --oneline --decorate --graph --all
 
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
