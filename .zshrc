@@ -40,12 +40,12 @@ source $HOME/.zshrc.custom
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(ant apache2-macports autoenv battery brew cake coffee command-not-found compleat cp encode64 gem git git-extras git-flow git-remote-branch gitfast github gitignore golang gradle heroku history jruby macports mercurial mvn mysql-macports node nvm nyan osx perl python rbenv repo ruby rvm ssh-agent sudo svn symfony2 web-search)
+plugins=(ant apache2-macports autoenv battery brew cake coffee command-not-found compleat cp encode64 gem git git-extras git-flow git-remote-branch gitfast github gitignore golang gradle heroku history jruby macports mercurial mvn mysql-macports node nvm nyan osx perl python rbenv repo ruby rvm ssh-agent sudo svn symfony2 web-search tmux)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/sbin:/bin:"
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/sbin:/bin:$HOME/bin:"
 
 export PATH="${PATH}:/opt/X11/bin:/usr/local/mysql/bin:/Users/tarosa/dev/Tools/apache-maven-2.2.1/bin:/Users/tarosa/usr/share/ant//bin:/Users/ozaki/.svm/current/rt/bin:/Users/ozaki/Library/Haskell/bin:/Users/tarosa/android-sdks/tools:/Users/tarosa/android-sdks/extTools/dex2jar-0.0.9.15:/Users/tarosa/bin:/opt/X11/bin:/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/:/Users/tarosa/local/bin:/usr/local/git/bin:/Users/tarosa/dotfiles/bin:/sbin:/usr/local/bin:/Users/tarosa/dev/Project/sandbox/stax-sdk-0.2.11:/Users/tarosa/dev/air/bin:/Users/tarosa/dev/flex/bin:/Users/tarosa/sandbox/GoogleAppEngine/sdk/1.3.4/google_appengine:/Users/tarosa/sandbox/GAEJava/sdk/appengine-java-sdk-1.3.7/bin:/Users/tarosa/dev/go/bin:/Users/tarosa/sandbox/jruby/jruby-1.5.2/bin:/Users/tarosa/sandbox/mirah/mirah/bin:/apache-ant/bin:~/.rvm/bin:/opt/local/lib/mysql55/bin:/opt/local/lib/postgresql93/bin"
 export PATH=${PATH}:~/gsutil
@@ -70,19 +70,44 @@ nvm use default
 # perlbrew use 5.18.1
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
 export LANG="ja_JP.UTF-8"
 export XMODIFIERS="@im=uim"
 export GTK_IM_MODULE="uim"
 
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-export PATH="$HOME/.phpenv/bin:$PATH"
-eval "$(phpenv init -)"
+if [[ -s $HOME/.pyenv/bin/pyenv ]]
+then
+  export PATH="$HOME/.pyenv/bin:$PATH"
+  eval "$(pyenv init -)"
+fi
+
+if [[ -s $HOME/.phpenv/bin/phpenv ]]
+then
+  export PATH="$HOME/.phpenv/bin:$PATH"
+  eval "$(phpenv init -)"
+fi
+
+# if [[ $HOME/.rbenv/bin/pyenv ]] ;
+#   eval "$(rbenv init -)"
+#   export PATH="$HOME/.rbenv/bin:$PATH"
+# fi
 
 PATH=$PATH:/Applications/Xcode6-Beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/
 
-export GOROOT="/usr/local/Cellar/go/1.2.2/libexec"
-export GOPATH="$HOME/gocode/"
-PATH=$PATH:$HOME/gocode/bin/
+export GOROOT="/usr/local/opt/go/libexec"
+export GOPATH="/opt/go/"
+PATH=$PATH:/opt/gocode/bin/:/usr/local/opt/go/libexec/bin
+
+
+if [[ -s $HOME/.nvm/nvm.sh ]] 
+then
+  . $HOME/.nvm/nvm.sh
+  nvm use default
+fi
+
+
+if [[ -s /usr/libexec/java_home ]]
+then
+  export JAVA_HOME=$(/usr/libexec/java_home -v 1.6)
+  export PATH=$JAVA_HOME/bin:$PATH
+fi
+
