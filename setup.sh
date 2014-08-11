@@ -1,4 +1,7 @@
 #!/bin/bash
+
+touch .zshrc.custom
+
 DOT_FILES=( .zshrc .vimrc .zshrc.custom .gitconfig)
 
 for file in ${DOT_FILES[@]}
@@ -7,3 +10,4 @@ do
 done
 [ ! -d ~/.vim ] && ln -s ~/dotfiles/vimfiles ~/.vim
 git clone https://github.com/Shougo/vimproc ~/.vim/bundle/vimproc
+
