@@ -11,3 +11,9 @@ done
 [ ! -d ~/.vim ] && ln -s ~/dotfiles/vimfiles ~/.vim
 git clone https://github.com/Shougo/vimproc ~/.vim/bundle/vimproc
 
+cd $HOME/dotfiles/vimfiles/bundle/vimproc
+sudo make
+cd $HOME/dotfiles
+
+git submodule init
+git submodule update
