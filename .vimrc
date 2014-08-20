@@ -398,6 +398,22 @@ endif
 
 
 
+"------------------------------------------------
+"    _______       _
+"   (_______)     | |
+"    _   ___  ___ | | _____ ____   ____
+"   | | (_  |/ _ \| |(____ |  _ \ / _  |
+"   | |___) | |_| | |/ ___ | | | ( (_| |
+"    \_____/ \___/ \_)_____|_| |_|\___ |
+"                                (_____|
+"
+
+
+set rtp+=$GOROOT/misc/vim
+exe "set rtp+=" . globpath($GOPATH, "src/github.com/golang/lint/misc/vim")
+auto BufWritePre *.go Fmt
+
+
 
 "------------------------------------------------
 " Plugin
@@ -450,6 +466,7 @@ NeoBundle 'mattn/emmet-vim'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'vim-scripts/Align'
 NeoBundle 'vim-scripts/YankRing.vim'
+NeoBundle 'Blackrush/vim-gocode'
 
 "NeoBundle 'https://bitbucket.org/kovisoft/slimv'
 
@@ -706,29 +723,6 @@ NeoBundle "scrooloose/syntastic", {
       \   "mac": ["pip install flake8", "npm -g install coffeelint"],
       \   "unix": ["pip install flake8", "npm -g install coffeelint"],
       \ }}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
