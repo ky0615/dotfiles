@@ -4,7 +4,8 @@ ZSH_THEME="dst_e"
 ZSH_CUSTOM=$ZSH"/../zshcustom"
 source $HOME/.zshrc.custom
 
-plugins=(ant apache2-macports autoenv battery brew cake coffee command-not-found compleat cp encode64 gem git git-extras git-flow git-remote-branch gitfast github gitignore golang gradle heroku history jruby macports mercurial mvn mysql-macports node nvm nyan osx perl python rbenv repo ruby rvm ssh-agent sudo svn symfony2 web-search tmux)
+plugins=(battery brew cake coffee command-not-found compleat cp encode64 gem git git-extras git-flow git-remote-branch history node nvm nyan osx perl python rbenv ruby rvm ssh-agent sudo golang gradle heroku)
+# disabled: gitfast github gitignore
 
 source $ZSH/oh-my-zsh.sh
 
