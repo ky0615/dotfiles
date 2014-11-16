@@ -180,10 +180,10 @@ nmap <silent> <Esc><Esc> :nohlsearch<CR>
 "
 
 if has('iconv')
-  set statusline=%<%f\ %m\ %r%h%w%{'['.(&fenc!=''?&fenc:&enc).(&bomb?':BOM':'').']['.&ff.']'}%=[0x%{FencB()}]\ (%v,%l)/%L%8P\ 
+  set statusline=%<%f\ %m\ %r%h%w%{'['.(&fenc!=''?&fenc:&enc).(&bomb?':BOM':'').']['.&ff.']'}%=[0x%{FencB()}]\ (%v,%l)/%L%8P\
 
 else
-  set statusline=%<%f\ %m\ %r%h%w%{'['.(&fenc!=''?&fenc:&enc).(&bomb?':BOM':'').']['.&ff.']'}%=\ (%v,%l)/%L%8P\ 
+  set statusline=%<%f\ %m\ %r%h%w%{'['.(&fenc!=''?&fenc:&enc).(&bomb?':BOM':'').']['.&ff.']'}%=\ (%v,%l)/%L%8P\
 
 endif
 
@@ -246,7 +246,7 @@ endfunction
 
 
 "------------------------------------------------
-" Normal mode 
+" Normal mode
 "
 
 " Showing help file
@@ -432,7 +432,7 @@ filetype off
 
 if has('vim_starting')
 	set runtimepath+=~/.vim/neobundle.vim
-	call neobundle#rc(expand('~/.vim/bundle/')) 
+	call neobundle#rc(expand('~/.vim/bundle/'))
 	set runtimepath+=$goroot/misc/vim
 endif
 
@@ -624,7 +624,7 @@ let s:hooks = neobundle#get_hooks("vimfiler")
 function! s:hooks.on_source(bundle)
   let g:vimfiler_as_default_explorer = 1
   let g:vimfiler_enable_auto_cd = 1
-  
+
   " .から始まるファイルおよび.pycで終わるファイルを不可視パターンに
   " 2013-08-14 追記
   let g:vimfiler_ignore_pattern = "\%(^\..*\|\.pyc$\)"
@@ -670,7 +670,7 @@ else
         let g:acp_enableAtStartup = 0
         let g:neocomplcache_enable_smart_case = 1
         " NeoComplCacheを有効化
-        " NeoComplCacheEnable 
+        " NeoComplCacheEnable
     endfunction
 endif
 
