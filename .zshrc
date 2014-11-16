@@ -64,3 +64,4 @@ then
   export PATH=$JAVA_HOME/bin:$PATH
 fi
 
+PATH=~/.pyenv/versions/2.7.6/bin:$PATH
