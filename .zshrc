@@ -43,11 +43,18 @@ export GOROOT="/usr/local/opt/go/libexec"
 export GOPATH="/opt/go/"
 PATH=$PATH:/opt/gocode/bin/:/usr/local/opt/go/libexec/bin
 
+if [[ -s /var/nvm/nvm.sh ]]
+then
+  . /var/nvm/nvm.sh
+  nvm use default
+  . $NVM_DIR/bash_completion
+fi
 
 if [[ -s $HOME/.nvm/nvm.sh ]] 
 then
   . $HOME/.nvm/nvm.sh
   nvm use default
+  . $NVM_DIR/bash_completion
 fi
 
 
