@@ -2,7 +2,7 @@
 
 touch .zshrc.custom
 
-DOT_FILES=( .zshrc .vimrc .zshrc.custom .gitconfig .zshrc.mac .zshrc.linux .zshrc.env)
+DOT_FILES=( .zshrc .vimrc .zshrc.custom .gitconfig .zshrc.mac .zshrc.linux .zshrc.env .gitignore_global)
 
 for file in ${DOT_FILES[@]}
 do
