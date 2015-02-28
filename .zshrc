@@ -1,4 +1,15 @@
+# set char code
+export LC_MESSAGES=ja_JP.UTF-8
+export LC_IDENTIFICATION=ja_JP.UTF-8
+export LC_COLLATE=ja_JP.UTF-8
+export LANG=ja_JP.UTF-8
+export LC_MEASUREMENT=ja_JP.UTF-8
+export LC_CTYPE=ja_JP.UTF-8
+export LC_TIME=ja_JP.UTF-8
+export LC_NAME=ja_JP.UTF-8
+export LESSCHARSET=utf-8
 
+# zsh config
 ZSH=$HOME/dotfiles/oh-my-zsh
 ZSH_THEME="dst_e"
 ZSH_CUSTOM=$ZSH"/../zshcustom"
@@ -11,6 +22,17 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/sbin:/bin:$HOME/bin:"
+
+case "${OSTYPE}" in
+# MacOSX
+darwin*)
+  [ -f ~/.zshrc.osx ] && source ~/.zshrc.osx
+  ;;
+# Linux
+linux*)
+  [ -f ~/.zshrc.linux ] && source ~/.zshrc.linux
+  ;;
+esac
 
 export PATH="${PATH}:/opt/X11/bin:/usr/local/mysql/bin:/Users/tarosa/dev/Tools/apache-maven-2.2.1/bin:/Users/tarosa/usr/share/ant//bin:/Users/ozaki/.svm/current/rt/bin:/Users/ozaki/Library/Haskell/bin:/Users/tarosa/android-sdks/tools:/Users/tarosa/android-sdks/extTools/dex2jar-0.0.9.15:/Users/tarosa/bin:/opt/X11/bin:/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/:/Users/tarosa/local/bin:/usr/local/git/bin:/Users/tarosa/dotfiles/bin:/sbin:/usr/local/bin:/Users/tarosa/dev/Project/sandbox/stax-sdk-0.2.11:/Users/tarosa/dev/air/bin:/Users/tarosa/dev/flex/bin:/Users/tarosa/sandbox/GoogleAppEngine/sdk/1.3.4/google_appengine:/Users/tarosa/sandbox/GAEJava/sdk/appengine-java-sdk-1.3.7/bin:/Users/tarosa/dev/go/bin:/Users/tarosa/sandbox/jruby/jruby-1.5.2/bin:/Users/tarosa/sandbox/mirah/mirah/bin:/apache-ant/bin:~/.rvm/bin:/opt/local/lib/mysql55/bin:/opt/local/lib/postgresql93/bin"
 export PATH=${PATH}:~/gsutil
