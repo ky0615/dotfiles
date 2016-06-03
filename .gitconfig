@@ -2,7 +2,7 @@
 	name = KoutarouYabe
 	email = idolm@ster.pw
 [core]
-	excludesfile = ~/.gitignore_global
+	excludesfile = /Users/tarosa/.gitignore_global
 	editor = vim
 [color]
 	ui = auto
@@ -22,3 +22,9 @@
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
 
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Users/tarosa/Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

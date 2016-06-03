@@ -1,6 +1,5 @@
 " set distinction the char code
 set encoding=utf-8
-set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
 " set file return code
 set fileformats=unix,dos,mac
 

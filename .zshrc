@@ -21,7 +21,7 @@ plugins=(battery brew cake coffee command-not-found compleat cp encode64 gem git
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/sbin:/bin:$HOME/bin:"
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/sbin:/bin:$HOME/bin:"$PATH
 
 case "${OSTYPE}" in
 # MacOSX
@@ -35,3 +35,5 @@ linux*)
 esac
 
 source ~/.zshrc.env
+export NVM_DIR="/Users/tarosa/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
