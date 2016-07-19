@@ -12,7 +12,7 @@ then
   export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
   export JAVA8_HOME=$(/usr/libexec/java_home -v 1.8)
   export JAVA7_HOME=$(/usr/libexec/java_home -v 1.7)
-# export JAVA6_HOME=$(/usr/libexec/java_home -v 1.6)
+  # export JAVA6_HOME=$(/usr/libexec/java_home -v 1.6)
   export PATH=$JAVA_HOME/bin:$PATH
 fi
 

@@ -15,8 +15,7 @@ ZSH_THEME="dst_e"
 ZSH_CUSTOM=$ZSH"/../zshcustom"
 source $HOME/.zshrc.custom
 
-plugins=(battery brew cake coffee command-not-found compleat cp encode64 gem git git-extras git-flow git-remote-branch history node nvm nyan osx python rbenv ruby rvm ssh-agent sudo golang gradle heroku)
-# disabled: gitfast github gitignore
+plugins=(adb brew brew-cask coffee git git-extras git-flow git-remote-branch history node npm nvm nyan osx python sudo gradle)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -26,7 +25,7 @@ export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/sbin:/bin:$HOME/
 case "${OSTYPE}" in
 # MacOSX
 darwin*)
-  [ -f ~/.zshrc.osx ] && source ~/.zshrc.osx
+  [ -f ~/.zshrc.mac ] && source ~/.zshrc.mac
   ;;
 # Linux
 linux*)
@@ -35,5 +34,3 @@ linux*)
 esac
 
 source ~/.zshrc.env
-export NVM_DIR="/Users/tarosa/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
