@@ -25,3 +25,5 @@ PATH=$PATH:/opt/gocode/bin/:/usr/local/opt/go/libexec/bin
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 eval `/usr/libexec/path_helper -s`
+
+PATH=$PATH:/Users/tarosa/Library/Android/sdk/tools
