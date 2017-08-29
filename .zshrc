@@ -15,7 +15,7 @@ ZSH_THEME="dst_e"
 ZSH_CUSTOM=$ZSH"/../zshcustom"
 source $HOME/.zshrc.custom
 
-plugins=(adb brew brew-cask coffee git git-extras git-flow git-remote-branch history node npm nvm nyan osx python sudo gradle)
+plugins=(adb brew brew-cask coffee docker docker-compose boot2docker git git-extras git-flow git-remote-branch history node npm nvm nyan osx python sudo gradle)
 
 source $ZSH/oh-my-zsh.sh
 
