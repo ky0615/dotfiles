@@ -6,7 +6,6 @@ app.apk
 ,*
 ,/
 .swp
-reated by https://www.gitignore.io/api/vim
 
 ### Vim ###
 # swap
@@ -22,3 +21,4 @@ tags
 .gradletasknamecache
 .python-version
 
+.envrc
