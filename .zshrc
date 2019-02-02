@@ -15,7 +15,7 @@ ZSH_THEME="dst_e"
 ZSH_CUSTOM=$ZSH"/../zshcustom"
 source $HOME/.zshrc.custom
 
-plugins=(adb brew brew-cask coffee docker docker-compose boot2docker git git-extras git-flow git-remote-branch history node npm nvm nyan osx python sudo gradle)
+plugins=(adb aws brew cargo docker docker-compose fabric git git-extras git-flow git-remote-branch gradle history iterm2 node npm osx pip python sudo vscode xcode yarn)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -34,3 +34,23 @@ linux*)
 esac
 
 source ~/.zshrc.env
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/tarosa/workspace/kantoBus/bustok/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/tarosa/workspace/kantoBus/bustok/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/tarosa/workspace/kantoBus/bustok/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/tarosa/workspace/kantoBus/bustok/node_modules/tabtab/.completions/sls.zsh
+
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="/usr/local/opt/icu4c/bin:$PATH"
+export PATH="/usr/local/opt/icu4c/sbin:$PATH"
+
+
+# if (which zprof > /dev/null 2>&1) ;then
+  # zprof
+# fi
+
