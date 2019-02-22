@@ -22,3 +22,4 @@ tags
 .python-version
 
 .envrc
+package-lock.json
