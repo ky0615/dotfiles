@@ -1,5 +1,5 @@
 [user]
-	name = KoutarouYabe
+	name = Kotaro Yabe
 	email = idolm@ster.pw
 [core]
 	excludesfile = /Users/tarosa/.gitignore_global
@@ -27,5 +27,5 @@
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
