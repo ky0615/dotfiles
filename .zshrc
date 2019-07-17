@@ -15,7 +15,7 @@ ZSH_THEME="dst_e"
 ZSH_CUSTOM=$ZSH"/../zshcustom"
 source $HOME/.zshrc.custom
 
-plugins=(adb aws brew cargo docker docker-compose fabric git git-extras git-flow git-remote-branch gradle history iterm2 node npm osx pip python sudo vscode xcode yarn)
+plugins=(adb aws brew cargo common-aliases docker docker-compose fabric git git-extras git-flow git-extras git-remote-branch gradle history iterm2 kubectl node npm osx pip pipenv python pyenv rbenv sudo ssh-agent terraform vscode xcode yarn)
 
 source $ZSH/oh-my-zsh.sh
 
