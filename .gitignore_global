@@ -20,6 +20,7 @@ Session.vim
 tags
 .gradletasknamecache
 .python-version
+.node-version
 
 .envrc
 package-lock.json
