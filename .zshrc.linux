@@ -1,0 +1,4 @@
+
+
+alias pbcopy='xsel --clipboard --input'
+alias pbpaste='xsel -bo'
