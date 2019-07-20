@@ -9,25 +9,9 @@ export PATH=${PATH}:/Applications/calibre.app/Contents/MacOS
 export XMODIFIERS="@im=uim"
 export GTK_IM_MODULE="uim"
 
-if [[ -s /usr/libexec/java_home ]]
-then
-  export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
-  export JAVA8_HOME=$(/usr/libexec/java_home -v 1.8)
-  export JAVA7_HOME=$(/usr/libexec/java_home -v 1.7)
-  # export JAVA6_HOME=$(/usr/libexec/java_home -v 1.6)
-  export PATH=$JAVA_HOME/bin:$PATH
-fi
-
-# PATH=$PATH:/Applications/Xcode6-Beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/
-
-# Golang
-export GOROOT="/usr/local/opt/go/libexec"
-export GOPATH="/opt/go/"
-PATH=$PATH:/opt/gocode/bin/:/usr/local/opt/go/libexec/bin
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 eval `/usr/libexec/path_helper -s`
-
-PATH=$PATH:/Users/tarosa/Library/Android/sdk/platform-tools
 
 alias lsusb="system_profiler SPUSBDataType"
