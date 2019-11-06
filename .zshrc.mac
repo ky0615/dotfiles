@@ -4,6 +4,9 @@ export PATH=${PATH}:~/gsutil
 
 export PATH="${PATH}:/opt/X11/bin:/usr/local/mysql/bin:/Users/tarosa/dev/Tools/apache-maven-2.2.1/bin:/Users/tarosa/usr/share/ant//bin:/Users/ozaki/.svm/current/rt/bin:/Users/ozaki/Library/Haskell/bin:/Users/tarosa/android-sdks/tools:/Users/tarosa/android-sdks/extTools/dex2jar-0.0.9.15:/Users/tarosa/bin:/opt/X11/bin:/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources:/Users/tarosa/local/bin:/usr/local/git/bin:/Users/tarosa/dotfiles/bin:/sbin:/usr/local/bin:/Users/tarosa/dev/Project/sandbox/stax-sdk-0.2.11:/Users/tarosa/dev/air/bin:/Users/tarosa/dev/flex/bin:/Users/tarosa/sandbox/GoogleAppEngine/sdk/1.3.4/google_appengine:/Users/tarosa/sandbox/GAEJava/sdk/appengine-java-sdk-1.3.7/bin:/Users/tarosa/dev/go/bin:/Users/tarosa/sandbox/jruby/jruby-1.5.2/bin:/Users/tarosa/sandbox/mirah/mirah/bin:/apache-ant/bin:~/.rvm/bin:/opt/local/lib/mysql55/bin:/opt/local/lib/postgresql93/bin"
 
+export PATH=${PATH}:~/Library/Android/sdk/platform-tools
+
+
 export PATH=${PATH}:/Applications/calibre.app/Contents/MacOS
 
 export XMODIFIERS="@im=uim"
