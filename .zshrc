@@ -14,7 +14,17 @@ ZSH=$HOME/dotfiles/oh-my-zsh
 ZSH_THEME="dst_e"
 ZSH_CUSTOM=$ZSH"/../zshcustom"
 
-plugins=(adb aws brew cargo common-aliases docker docker-compose fabric git git-extras git-flow git-extras git-remote-branch gradle history iterm2 kubectl node npm osx pip pipenv python pyenv rbenv sudo ssh-agent terraform vscode xcode yarn)
+plugins=(
+  aws
+  common-aliases
+  docker docker-compose
+  git git-flow
+  kubectl
+  pip python
+  sudo
+  terraform
+  yarn
+)
 
 source $ZSH/oh-my-zsh.sh
 
