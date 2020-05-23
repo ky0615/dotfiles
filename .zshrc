@@ -13,7 +13,6 @@ export LESSCHARSET=utf-8
 ZSH=$HOME/dotfiles/oh-my-zsh
 ZSH_THEME="dst_e"
 ZSH_CUSTOM=$ZSH"/../zshcustom"
-source $HOME/.zshrc.custom
 
 plugins=(adb aws brew cargo common-aliases docker docker-compose fabric git git-extras git-flow git-extras git-remote-branch gradle history iterm2 kubectl node npm osx pip pipenv python pyenv rbenv sudo ssh-agent terraform vscode xcode yarn)
 
@@ -34,9 +33,8 @@ linux*)
 esac
 
 source ~/.zshrc.env
+source $HOME/.zshrc.custom
 
 alias l='ls -lah'
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-export PATH="/usr/local/opt/icu4c/bin:$PATH"
-export PATH="/usr/local/opt/icu4c/sbin:$PATH"
