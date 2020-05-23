@@ -5,6 +5,7 @@
 	excludesfile = /Users/tarosa/.gitignore_global
 	editor = vim
 	quotepath = false
+	autocrlf = input
 [color]
 	ui = auto
 [alias]

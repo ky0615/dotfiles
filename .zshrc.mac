@@ -8,7 +8,7 @@ export PATH="/usr/local/opt/icu4c/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/sbin:$PATH"
 
 export PATH=${PATH}:~/Library/Android/sdk/platform-tools:~/Library/Android/sdk/tools/bin
-
+export ANDROID_SDK_ROOT=~/Library/Android/sdk
 
 export PATH=${PATH}:/Applications/calibre.app/Contents/MacOS
 
