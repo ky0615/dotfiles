@@ -48,3 +48,7 @@ source $HOME/.zshrc.custom
 alias l='ls -lah'
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+if (which zprof > /dev/null 2>&1) ;then
+  zprof
+fi
