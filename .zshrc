@@ -24,6 +24,7 @@ plugins=(
   sudo
   terraform
   yarn
+  zsh-syntax-highlighting
 )
 
 source ~/.zshrc.env
