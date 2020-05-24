@@ -26,7 +26,9 @@ plugins=(
   yarn
 )
 
+source ~/.zshrc.env
 source $ZSH/oh-my-zsh.sh
+source $HOME/.zshrc.custom
 
 # User configuration
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/sbin:/bin:$HOME/bin:"$PATH
@@ -41,9 +43,6 @@ linux*)
   [ -f ~/.zshrc.linux ] && source ~/.zshrc.linux
   ;;
 esac
-
-source ~/.zshrc.env
-source $HOME/.zshrc.custom
 
 alias l='ls -lah'
 
