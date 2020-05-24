@@ -7,3 +7,6 @@
 [submodule "zshcustom/plugins/zsh-syntax-highlighting"]
 	path = zshcustom/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "zshcustom/plugins/zsh-autosuggestions"]
+	path = zshcustom/plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions
