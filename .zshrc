@@ -24,7 +24,7 @@ plugins=(
   sudo
   terraform
   yarn
-  zsh-autosuggestions
+  # zsh-autosuggestions
   zsh-syntax-highlighting
 )
 
