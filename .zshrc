@@ -17,13 +17,17 @@ ZSH_CUSTOM=$ZSH"/../zshcustom"
 plugins=(
   aws
   common-aliases
+  # command-not-found
   docker docker-compose
   git git-flow
+  helm
   kubectl
   pip python
   sudo
   terraform
+  tig
   yarn
+  zsh-interactive-cd
   # zsh-autosuggestions
   # zsh-syntax-highlighting
 )
