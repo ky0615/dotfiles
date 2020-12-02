@@ -20,8 +20,7 @@ plugins=(
   # command-not-found
   docker docker-compose
   git git-flow
-  helm
-  kubectl
+  kubectl helm
   pip python
   sudo
   terraform
