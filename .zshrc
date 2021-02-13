@@ -48,6 +48,17 @@ linux*)
   ;;
 esac
 
+case "${OSTYPE}" in
+# Apple Silicon
+darwin20*)
+  [ -f ~/.zshrc.mac-si ] && source ~/.zshrc.mac-si
+  ;;
+# Apple Intel Mac
+darwin19*)
+  [ -f ~/.zshrc.mac-x86 ] && source ~/.zshrc.mac-x86
+  ;;
+esac
+
 alias l='ls -lah'
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

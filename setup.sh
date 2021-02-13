@@ -2,7 +2,7 @@
 
 touch .zshrc.custom
 
-DOT_FILES=( .zshenv .zshrc .vimrc .zshrc.custom .gitconfig .zshrc.mac .zshrc.linux .zshrc.env .gitignore_global .tmux.conf)
+DOT_FILES=( .zshenv .zshrc .vimrc .zshrc.custom .gitconfig .zshrc.mac .zshrc.mac-si .zshrc.mac-x86 .zshrc.linux .zshrc.env .gitignore_global .tmux.conf)
 
 for file in ${DOT_FILES[@]}
 do
