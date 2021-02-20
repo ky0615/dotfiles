@@ -1,4 +1,4 @@
-
+export PATH="$HOME/.fzf/bin:$PATH"
 
 alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel -bo'
