@@ -22,4 +22,4 @@ eval `/usr/libexec/path_helper -s`
 
 alias lsusb="system_profiler SPUSBDataType"
 
-source /usr/local/opt/git-extras/share/git-extras/git-extras-completion.zsh
+
