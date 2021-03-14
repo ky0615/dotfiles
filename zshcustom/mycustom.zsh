@@ -7,3 +7,4 @@ alias res='sed -e "s/\([][ '\'']\)/ /g"'
 
 alias nodenv-update='nodenv update-version-defs'
 alias nodenv-node-path='nodenv which node'
+alias kgsa='kubectl get svc --all-namespaces'
