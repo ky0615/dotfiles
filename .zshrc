@@ -25,7 +25,7 @@ plugins=(
   sudo
   terraform
   tig
-  yarn
+  yarn npm
   zsh-interactive-cd
   # zsh-autosuggestions
   # zsh-syntax-highlighting
