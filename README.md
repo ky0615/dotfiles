@@ -17,7 +17,12 @@ brew tap homebrew/command-not-found
 
 brew install zlib arp-scan neofetch wget socat x264 autoconf ffmpeg jpeg x265 automake flac jq libogg xmlstarlet awscli plantuml sqlite gradle lame libpng protobuf xz boost graphviz tfenv youtube-dl gcc openjdk tmux clang-format cmake openssh readline zsh icu4c curl libusb opus git git-extras git-flow git-lfs glfw imagemagick mpv iperf vim mysql w3m watch webp fzf
 
-brew cask install adobe-creative-cloud bartender coolterm docker firefox adoptopenjdk8 bettertouchtool cyberduck dropbox app-cleaner calibre discord fantastical loopback google-backup-and-sync google-japanese-ime istat-menus5 jetbrains-toolbox musicbrainz-picard obs path-finder sketch xquartz vlc vox
+brew install adobe-creative-cloud bartender coolterm  firefox bettertouchtool cyberduck dropbox app-cleaner calibre discord jetbrains-toolbox musicbrainz-picard obs path-finder sketch xquartz vlc visual-studio-code homebrew/cask/1password authy loopback
+
+# need manual install 
+# docker https://docs.docker.com/docker-for-mac/apple-m1/
+# google-japanese-ime https://www.google.co.jp/ime/
+# istat menus6 https://bjango.com/mac/istatmenus/
 
 git clone https://github.com/anyenv/anyenv ~/.anyenv
 ~/.anyenv/bin/anyenv init
