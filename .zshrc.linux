@@ -5,3 +5,4 @@ alias pbpaste='xsel -bo'
 
 export DISPLAY=localhost:0.0
 
+export PATH="/usr/local/cuda/bin:$PATH"
