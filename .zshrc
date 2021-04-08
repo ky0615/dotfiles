@@ -48,13 +48,13 @@ linux*)
   ;;
 esac
 
-case "${OSTYPE}" in
+case "$(uname -m)" in
 # Apple Silicon
-darwin20*)
+arm64*)
   [ -f ~/.zshrc.mac-si ] && source ~/.zshrc.mac-si
   ;;
 # Apple Intel Mac
-darwin19*)
+x86_64*)
   [ -f ~/.zshrc.mac-x86 ] && source ~/.zshrc.mac-x86
   ;;
 esac
