@@ -41,21 +41,22 @@ case "${OSTYPE}" in
 # MacOSX
 darwin*)
   [ -f ~/.zshrc.mac ] && source ~/.zshrc.mac
+
+  case "$(uname -m)" in
+  # Apple Silicon
+  arm64*)
+    [ -f ~/.zshrc.mac-si ] && source ~/.zshrc.mac-si
+    ;;
+  # Apple Intel Mac
+  x86_64*)
+    [ -f ~/.zshrc.mac-x86 ] && source ~/.zshrc.mac-x86
+    ;;
+  esac
+
   ;;
 # Linux
 linux*)
   [ -f ~/.zshrc.linux ] && source ~/.zshrc.linux
-  ;;
-esac
-
-case "$(uname -m)" in
-# Apple Silicon
-arm64*)
-  [ -f ~/.zshrc.mac-si ] && source ~/.zshrc.mac-si
-  ;;
-# Apple Intel Mac
-x86_64*)
-  [ -f ~/.zshrc.mac-x86 ] && source ~/.zshrc.mac-x86
   ;;
 esac
 
