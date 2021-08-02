@@ -9,3 +9,4 @@ alias filename="sed -E 's/^([\/]?.*\/)*(.*)\..*$/\2/'"
 alias nodenv-update='nodenv update-version-defs'
 alias nodenv-node-path='nodenv which node'
 alias kgsa='kubectl get svc --all-namespaces'
+alias ,,='cd ..'
