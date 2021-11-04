@@ -44,3 +44,6 @@ git clone https://github.com/znz/anyenv-update.git $(anyenv root)/plugins/anyenv
 ./init.sh
 
 ```
+
+https://developer.apple.com/download/all/
+
