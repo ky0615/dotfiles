@@ -1,6 +1,7 @@
 [user]
 	name = Kotaro Yabe
 	email = idolm@ster.pw
+	signingkey = B744641C6CE4B5ED
 [core]
 	excludesfile = /Users/tarosa/.gitignore_global
 	editor = vim
@@ -41,3 +42,7 @@
 	defaultBranch = master
 [push]
 	default = current
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg

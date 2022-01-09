@@ -8,6 +8,7 @@ export LC_CTYPE=ja_JP.UTF-8
 export LC_TIME=ja_JP.UTF-8
 export LC_NAME=ja_JP.UTF-8
 export LESSCHARSET=utf-8
+export GPG_TTY=$(tty)
 
 # zsh config
 ZSH=$HOME/dotfiles/oh-my-zsh
