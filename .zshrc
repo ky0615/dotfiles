@@ -20,6 +20,7 @@ plugins=(
   common-aliases
   # command-not-found
   docker docker-compose
+  gradle
   git git-flow
   kubectl helm
   pip python
