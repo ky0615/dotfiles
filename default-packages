@@ -3,3 +3,6 @@ http-server
 npm-check-updates
 @nestjs/cli
 @aws-amplify/cli
+@antfu/ni
+firebase-tools
+
