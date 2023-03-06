@@ -39,7 +39,7 @@ anyenv install goenv
 anyenv install tfenv
 
 git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
-git clone git://github.com/nodenv/node-build-update-defs.git $(nodenv root)/plugins/node-build-update-defs
+git clone https://github.com/nodenv/node-build-update-defs.git $(nodenv root)/plugins/node-build-update-defs
 ln -s $HOME/dotfiles/default-packages $(nodenv root)/default-packages
 git clone https://github.com/znz/anyenv-update.git $(anyenv root)/plugins/anyenv-update
 
