@@ -1,6 +1,6 @@
 [user]
 	name = Kotaro Yabe
-	email = idolm@ster.pw
+	email = tarosa@notespace.jp
 	signingkey = B744641C6CE4B5ED
 [core]
 	excludesfile = /Users/tarosa/.gitignore_global
