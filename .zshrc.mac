@@ -23,3 +23,6 @@ eval `/usr/libexec/path_helper -s`
 alias lsusb="system_profiler SPUSBDataType"
 
 
+eval "$(zoxide init zsh)"
+
+export CAPACITOR_ANDROID_STUDIO_PATH=~/Applications/Android\ Studio.app
