@@ -13,6 +13,8 @@ PROMPT='%(?, ,%{$fg[red]%}%{$reset_color%})
 %_ $(prompt_char) '
 
 RPROMPT='%{$fg[green]%}[%*]%{$reset_color%}'
+setopt transient_rprompt
+
 
 #(*ﾟ▽ ﾟ）ﾉ” <
 #(つд；*)   <
