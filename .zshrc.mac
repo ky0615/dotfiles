@@ -7,6 +7,8 @@ export PATH="${PATH}:/opt/X11/bin:/usr/local/mysql/bin:/Users/tarosa/dev/Tools/a
 export PATH="/usr/local/opt/icu4c/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/sbin:$PATH"
 
+export PATH="${HOME}/.local/bin:$PATH"
+
 export PATH=${PATH}:~/Library/Android/sdk/platform-tools:~/Library/Android/sdk/tools/bin
 export ANDROID_SDK_ROOT=~/Library/Android/sdk
 
