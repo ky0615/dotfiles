@@ -7,6 +7,7 @@
 	editor = vim
 	quotepath = false
 	autocrlf = input
+	attributesfile = /Users/tarosa/.gitattributes
 [color]
 	ui = auto
 [alias]
