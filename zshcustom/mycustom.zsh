@@ -10,3 +10,7 @@ alias nodenv-update='nodenv update-version-defs'
 alias nodenv-node-path='nodenv which node'
 alias kgsa='kubectl get svc --all-namespaces'
 alias ,,='cd ..'
+
+alias nr='ni run'
+alias nun='ni remove'
+
