@@ -14,3 +14,4 @@ alias ,,='cd ..'
 alias nr='ni run'
 alias nun='ni remove'
 
+alias tm='task-master'
