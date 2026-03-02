@@ -9,11 +9,13 @@ do
 	ln -s $HOME/dotfiles/$file $HOME/$file
 done
 [ ! -d ~/.vim ] && ln -s ~/dotfiles/vimfiles ~/.vim
-git clone https://github.com/Shougo/vimproc ~/.vim/bundle/vimproc
 
-cd $HOME/dotfiles/vimfiles/bundle/vimproc
-sudo make
-cd $HOME/dotfiles
+# vim-plug のインストール
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# vim プラグインのインストール
+vim -es -u ~/.vimrc -i NONE -c 'PlugInstall' -c 'qa'
 
 git submodule init
 git submodule update

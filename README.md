@@ -43,9 +43,18 @@ git clone https://github.com/znz/anyenv-update.git $(anyenv root)/plugins/anyenv
 
 ln -s $HOME/dotfiles/default-packages $(nodenv root)/default-packages
 
-./init.sh
-
+./setup.sh
 ```
+
+### Vim
+
+セットアップスクリプト (`setup.sh`) が自動的に以下を実行します:
+
+1. `~/.vim` → `~/dotfiles/vimfiles` のシンボリックリンク作成
+2. [vim-plug](https://github.com/junegunn/vim-plug) のインストール
+3. プラグインの一括インストール (`PlugInstall`)
+
+手動でプラグインを更新する場合は Vim を起動して `:PlugUpdate` を実行してください。
 
 https://developer.apple.com/download/all/
 
