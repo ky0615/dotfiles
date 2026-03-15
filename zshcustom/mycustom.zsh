@@ -15,3 +15,5 @@ alias nr='ni run'
 alias nun='ni remove'
 
 alias tm='task-master'
+
+unalias rm cp mv 2>/dev/null
