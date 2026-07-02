@@ -36,3 +36,10 @@ export PATH="${PATH}:/Applications/MEGAcmd.app/Contents/MacOS"
 # Amazon Q pre block. Keep at the top of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
 
+open() {
+    if [ -d "$1" ]; then
+        command open -a "Path Finder" "$@"
+    else
+        command open "$@"
+    fi
+}

@@ -20,3 +20,5 @@ tags
 
 .envrc
 PipelineViewerConfig.xml
+
+**/.claude/settings.local.json
