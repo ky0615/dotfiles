@@ -40,7 +40,7 @@
 [pull]
 	ff = only
 [init]
-	defaultBranch = master
+	defaultBranch = main
 [push]
 	default = current
 [commit]
